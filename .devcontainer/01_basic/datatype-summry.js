@@ -26,5 +26,21 @@ let myobc={
  const myfuntion=function myFunction(){
     console.log("Hello World")
  }
-console.log(typeof myfuntion);
+// console.log(typeof myfuntion);
+//********************* */
+//memory
+//Stack(premitive),Heap(non premitive)
+//give us copy.   , give us original
+let myyoutubeName="bareface.bueaty.com"
+let anotherName=myyoutubeName
+// console.log(myyoutubeName)
+// console.log(anotherName)
+let user={
+    name:"hina",
+    class:3
 
+}
+let user2=user
+user2.name="saeed"
+// console.log(user)
+// console.log(user2)
