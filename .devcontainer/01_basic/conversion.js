@@ -26,5 +26,25 @@ let StringNumber=String(SomeNumber)
 /****************Operation ***********/
 let value =3;
 let negValue= -value;
-console.log(negValue);  
+// console.log(negValue);   
+// console.log(2+2)
+// console.log(2-2)
+// cpnsole.log(2**2)//2 raise to the power 2
+// console.log(2**3)//2 raise to power 3
+//console.log(2%3)use for remainder
+let str1="hina"
+let str2="iqbal"
+let str3=str1+str2
+// console.log(str3)
+//  console.log("1"+2)
+//  console.log(1+"2")
+//  console.log("1"+2+2)
+//  console.log(1+2+"2")
+//  console.log((3+4)*5%3)
+//console.log(+"");
+let gameCounter=100
+gameCounter++
+console.log(gameCounter);
+
+
 
