@@ -32,4 +32,6 @@ console.log(gameName.split('_'));//change th e variable in array
 
 
 
+
+
  
