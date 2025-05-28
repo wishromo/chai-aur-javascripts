@@ -1,0 +1,50 @@
+// two ways of craeting object litreal constructor
+//singleton in the way made with constructor
+
+//object litreals
+//Object.creat//contructor and we made liteal  object in it
+const mysym=Symbol("key1")
+
+const jsuser={
+    name:"hina",
+    "full name":"hina iqbal",//other way to accses it
+    [mysym]:"mykey1",//this is way to acces symabol variable. in java scrpit in object
+    age:18,
+    location:"islamabad",
+    email:"hina@gmail.com",
+    islogedin:false,
+    loggedinDays:['monday','thursday'],//array
+    days:[4,5,"june"]//array
+
+}
+
+//Two ways of accesing it
+// console.log(jsuser.loggedinDays)
+// console.log(jsuser.days)
+// console.log(jsuser.email)
+//console.log(jsuser["full name"])
+// console.log(typeof(jsuser[mysym]))
+//how to cahnge the value for key in object
+jsuser.email="hinasaeed@yahoo.com"
+// console.log(jsuser.email)
+//how to lock the value in object
+// Object.freeze(jsuser)
+jsuser.email="hinasaeed@chatgpt.com"//the object is freexe here so it would not. be change
+
+// console.log(jsuser.email)
+
+//funtion
+jsuser.greeting=function()
+{
+    console.log('hello');
+
+}
+// console.log(jsuser.greeting);
+// console.log(jsuser.greeting())//now it excute the funtion in prevvious line the function was displayed anonymous
+jsuser.greeting2=function()
+{
+// console.log(`this is the 2nd  function  ,${this.name}`)//means that this object all properties should be shown
+}
+// console.log(jsuser.greeting2);
+// console.log(jsuser.greeting2())//now it excute the funtion in prevvious line the function was displayed anonymous
+//it shows undeined msg in executiion because every lin eexecuted two time
