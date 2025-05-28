@@ -72,7 +72,42 @@ const user=[                        //array with multiple object
 // console.log(Object.keys(tinderuser));
 // console.log(Object.values(user[2]));//we can getn value of any object
 // console.log(Object.entries(user));//give entries for the object user in array
-console.log(tinderuser.hasOwnProperty("islogedIn"));//if we use it in loop and if the property not exist so we use this way to acces the propert in obect it gibve answer in boolean
+// console.log(tinderuser.hasOwnProperty("islogedIn"));//if we use it in loop and if the property not exist so we use this way to acces the propert in obect it gibve answer in boolean
+//destructring of object
+const course ={
+    name:"js in Hindi",
+    price:999,
+    teacher:"hitesh"
+}
+// console.log(course.teacher)
+// const {teacher}= course//once we write it like this so there is no need to write object. name first and than its property wite it iike this. accces it multiple time
+// console.log(teacher);
+const {teacher:insctructor}=course//we can change the name of the key and acces the key every time like this its is destructring
+console.log(insctructor);
+
+
+
+
+// const navBar = ({company}) =>//react concept
+//  {
+//  
+//  navBar(company="hitesh");
+
+//  }   ;    
+// {                           //this is json file 
+//     "name":"hina",              //ecery key is string and value is strin
+//     "coursename":"js in hindi",
+//     "price":999              //number wll comes in number form
+
+// }
+[
+    {}
+    {}
+    {}
+]
+
+
+
 
 
 
