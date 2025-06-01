@@ -1,10 +1,10 @@
 // let a=20             //global variable
 // const b=30           //there values are availbel in block
 // var c=45
-var c=300               //we difne again c here with othe value but it would not prin tbecause it see the c varibel value in block
+var c=300               //we difne again c here with othe value but it would not print because it see the c varibel value in block
 let a= 300
 //{}              //this is scope come with if else or function but if come with object then there we define object
-if (true){
+if (true){          //{}when it come with function or if thaen it is called scoope
     let a=20            //block variabel
 const b=30              //there values cannot go outside of the block
 var c=45
