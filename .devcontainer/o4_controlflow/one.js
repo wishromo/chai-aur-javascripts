@@ -9,3 +9,9 @@ if(false){// mean theat if the condition is false do no texecute from line no 6 
 
 
 }
+const isUserLoggedIn= true
+if (isUserLoggedIn){}
+//<,>,<=,>=,==,!=
+// 2<=2 ,3!=2 3 not equal 2
+const balance = 1000
+if(balance >500); console.log("test");console.log("test2")
