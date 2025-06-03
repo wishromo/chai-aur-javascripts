@@ -101,7 +101,7 @@ if (Object.keys(emptyObject).length === 0){                /// to see the object
 // true
 // Nullish coalescing oprerator (??) null, undefined
 let val1;
-val1  = 5 ?? 10
+val1  = 5 ?? 10             //?   and ?? they have diffrence
 val1= null ?? 10        //it give 10 in return null will be not asosigne not null or undefined
 val1=undefined ?? 15
 val1=null??10??20 // it will asigen the first value after null
