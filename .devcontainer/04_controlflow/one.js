@@ -32,15 +32,19 @@ const balance = 1000
 const userLoggedIn =true
 const debitCard =true
 const loggedInFromGoogle=false
-cosnt loggedInFromEmail=true
+const loggedInFromEmail=true
 if(userLoggedIn && debitCard && 2==3){
     console.log("allow to buy courses");
     
 }
-if (loggedInFromGoogle ||loggedInFromEmail ){//  const user= true if (loggedInFromGoogle ||loggedInFromEmail || user)//can be write like this as well
+if (loggedInFromGoogle ||loggedInFromEmail ){//  const user= true if (loggedInFromGoogle ||loggedInFromEmail || user)//can be write like this as well for or statment
     console.log("user logged in");
     
 
+}
+if (loggedInFromGoogle||loggedInFromEmail||userLoggedIn){
+    console.log("user logged in");
+    
 }
 
  
