@@ -39,5 +39,7 @@ const mycoding=[
 ]
 mycoding.forEach((item)=>{
     console.log(item.langName);
+    console.log(item.languagefileName);
+    
     
 })
