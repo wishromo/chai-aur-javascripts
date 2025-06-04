@@ -20,11 +20,11 @@ map.set('fr',"france")
 map.set('pak',"pakistan")       //it would not print this value because dupliation is not allowed and it ignores it usually use in database
 console.log(map);
 
-// for (const key of map)//   //it will print all the aray
-// for (const [key,value] of map ) {       //give the key of array
-//     console.log(key,':',value)    
+for (const key of map)//   //it will print all the aray
+for (const [key,value] of map ) {       //give the key of array
+    console.log(key,':',value)    
  
-// }
+}
 const myObject={
 "game1":"NFS",
 "game2":"spiderman"
