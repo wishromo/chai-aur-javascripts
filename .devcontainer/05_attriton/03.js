@@ -3,12 +3,13 @@
 const arr=[1,2,3,4,5]
 // ["","",""]
 // [{},{},{}]
-// for (const num of arr ){
+// for (const num of arr ){ // it is not object loopmbut the object word use in synatx
 //     console.log(num); 
     
 // }
 // const greeting="hello world"
 // for (const greet of greeting) {
+
 //     console.log(` each character ${greet}`);
 // }
 //Maps
