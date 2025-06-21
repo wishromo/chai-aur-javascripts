@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code Dom</title>
+</head>
+<body style="background-color: black; color: bisque;">
+    <ul class="language">
+        <li>Javascript</li>
+        
+    </ul>
+<!-- list item can be added diffrently -->
+<script>
+    function Addlang(langName) {
+       const li= document.createElement('li');
+       li.innerHTML=`${langName}`
+       document.querySelector('.language').appendChild(li)
+         
+    }
+    Addlang("python")
+    Addlang('C++')
+    // optimise way fof it in upper function we have to triverse all of the tree but not in lower function
+    //use for big projects and market choice
+    function addoptiLanguage(langName) {
+       const li=document.createElement('li')
+       li.appendChild(document.createTextNode(langName))
+       document.querySelector('.language').appendChild(li)
+
+    }
+    addoptiLanguage('golang')
+    //edit
+    const secondlan=document.querySelector('li:nth-child(2)')
+    //secondlan.innerHTML="mojo"//it works but it will ttriverse all of the tree so  not good for bigger project
+   const newli= document.createElement('li')
+   newli.textContent='mojo'
+   secondlan.replaceWith(newli)
+   //second edit
+   const firstlan=document.querySelector('li:first-child')
+   firstlan.outerHTML='<li>TypeScript</li>'
+   //remove
+   const lastlang=document.querySelector('li:last-child')
+   lastlang.remove()
+</script>
+</body>
+</html>
