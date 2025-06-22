@@ -124,3 +124,104 @@ setInterval(function() { // Corrected: 'Function' to 'function'
 }, 1000);
 //java script method to set the interval after every specified time and always be written like this its a synatx 1000 mean one second 2000 means two second
 ```
+## project 4 solution
+```
+// in form we can give the input as submit as well rather the button
+let randonNumber=(parseInt(Math.random()*100+1))
+const submit=document.querySelector('#subt')
+const UserInput=document.querySelector('#guessField')
+const guessSlot=document.querySelector('.guesses')
+const remaining=document.querySelector('.lastResult')
+const lowOrHi=document.querySelector('.lowOrHi')
+const startOver=document.querySelector('.resultParas')
+
+const p=document.createElement('p')
+
+let prevGuess=[]
+let NumGuess=1
+
+let playGames=true
+if(playGames){
+  submit.addEventListener('click',function(e){
+    e.preventDefault()
+   const guess=(parseInt (UserInput.value))
+   console.log(guess)
+   validateGuess(guess)
+  })
+}
+function validateGuess(guess){
+  // check the no is that proper value or not
+  if(isNaN(guess)){
+    alert('Please enter a valid No')
+  }
+  else if(guess<1){
+    alert('Please enter a more then 1')
+  }
+  else if(guess>100){
+    alert('Please enter a no less then 100')
+  }
+  else{
+    prevGuess.push(guess)
+    if(NumGuess===11){
+      displayGuess(guess)
+      displayMessage(`Game Over , Ranadom number was ${randomNumber}`)
+      endGame()
+    }
+    else{
+      displayGuess(guess)
+      checkGuess(guess)
+    }
+  }
+}
+function checkGuess(guess)
+{
+//give the message that it it working random no eqaul
+if (guess===randonNumber){
+  displayMessage(`You guessed it right`)
+  endGame()
+}
+else if(guess<randonNumber){
+  displayMessage(`Number is Tooo Low`)
+}
+else if(guess>randonNumber){
+  displayMessage(`Number is Too High`)
+}
+}
+function displayGuess(guess){
+  //its a cleanup method
+UserInput.value=""
+guessSlot.innerHTML+= `${guess},  `
+NumGuess++
+remaining.innerHTML=`${11-NumGuess}`
+}
+
+
+function displayMessage(message){
+  //cleanup guess
+  lowOrHi.innerHTML=`<h2>${message}</h2>`
+}
+
+
+function endGame(){
+UserInput.value=""
+UserInput.setAttribute('disabled',"")
+p.classList.add('button')
+p.innerHTML=`<h2 id="newGame">Start new Game</h2>`
+startOver.appendChild(p)
+playGames=false
+newGame()
+}
+function newGame(){
+ const newGameButton=document.querySelector('#newGame')
+ newGameButton.addEventListener('click',function(e){
+   randonNumber=parseInt(Math.random()*100+1)
+   prevGuess=[]
+   NumGuess=1
+   guessSlot.innerHTML=""
+   remaining.innerHTML=`${11-NumGuess}`
+   UserInput.removeAttribute('disabled')
+   startOver.removeChild(p)
+   playGames=true
+ })
+}
+```
