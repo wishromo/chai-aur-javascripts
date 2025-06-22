@@ -112,3 +112,15 @@ else if (bmi > 29.9) {
 }
 }) 
 ```
+## project 3 solution
+```
+const clock = document.getElementById('clock'); //they both work same
+// const clock=document.querySelector('#clock')
+
+setInterval(function() { // Corrected: 'Function' to 'function'
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());//for checking
+  clock.innerHTML=date.toLocaleTimeString()
+}, 1000);
+//java script method to set the interval after every specified time and always be written like this its a synatx 1000 mean one second 2000 means two second
+```
