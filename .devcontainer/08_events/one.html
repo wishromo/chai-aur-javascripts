@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HTML Events</title>
+</head>
+<body style="background-color: black; color: violet;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop" 
+                     src="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg"
+                     alt="photoshop" />
+            </li>
+            <li>
+                <img width="200px" id="japan" 
+                     src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg" 
+                     alt="" />
+            </li>
+            <li>
+                <img width="200px" id="river" 
+                     src="https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg" 
+                     alt="" />
+            </li>
+            <li>
+                <img width="200px" id="owl" 
+                     src="https://images.pexels.com/photos/357159/pexels-photo-357159.jpeg" 
+                     alt="" />
+            </li>
+            <li>
+                <img width="200px" id="prayer" 
+                     src="https://images.pexels.com/photos/2895295/pexels-photo-2895295.jpeg" 
+                     alt="" />
+            </li>
+            <li style="color: aliceblue;">
+                <a href="http://google.com" id="google" style="color: aliceblue;">Google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // broswer events to control the event
+    //we can write the event on clik direclty in the owl image tage that is onclick="alert('Owl clicked')"
+    //but it is not a good practice to write the event in the tag, we should use the event listener
+    //we can use the addEventListener method to add an event listener
+    //we can use the removeEventListener method to remove an event listener
+    // in reat we can use the onClick method to add an event listener because it is scaleable
+    //we can use the onClick method to remove an event listener
+            //events
+//type,timestamp,defaultPrevented,target,srcElemnt,
+    // current target,clientx clienty,screenx,screeny
+    //altkey,ctrlkey,shiftkey,keycode
+            //event finish
+
+
+
+    //we can use the onclick method to add an event listener
+
+
+
+   // document.getElementById("owl").onclick, function() {
+      //  alert("owl clicked");
+         // });
+
+
+      //this is the event listener but it not give too much infromation about the event so we 
+        // can use the addEventListener method because it give proogational information about the event
+
+
+        //new approach to add event listener
+//     document.getElementById("owl").addEventListener("click", function(e) 
+//         {alert("Owl clicked");},
+//    false);
+    // the false is to prevent the default action of the event and third parameter is to prevent the bubbling of the event
+    //the bubbling of the event is when the event is triggered on a child element and it bubbles up to the parent element
+    //the false is to prevent the default action of the event and the third parameter is to prevent the bubbling of the event
+
+    //we can use the removeEventListener method to remove an event listener
+    //document.getElementById("owl").removeEventListener("click", function(e) {alert("Owl clicked");}, false);
+
+    //we can use the addEventListener method to add an event listener to the google link
+    //attachEventListener is a method that allows you to attach an event handler to an element it was old way to do it
+
+
+
+
+
+
+
+    // document.getElementById("images").addEventListener("click", function(e) {
+        
+    //     console.log("clicked inside th ul element"); 
+    // }, false);
+    //  document.getElementById("owl").addEventListener("click", function(e) {
+    //     e.stopPropagation(); //this is to stop the bubbling of the event
+    //     console.log("owl clicked"); 
+    // }, false); //this is the bubbling of the event
+
+    
+
+    // document.getElementById("images").addEventListener("click", function(e) {
+        
+    //     console.log("clicked inside th ul element"); 
+    // }, true); //this is the capturing of the event
+    //  document.getElementById("owl").addEventListener("click", function(e) {
+        
+    //     console.log("owl clicked"); 
+    // }, true); //this is the capturing of the event
+    //the capturing of the event is when the event is triggered on the parent element and it captures the event before it reaches the child element
+    //the capturing of the event is when the event is triggered on the parent element and it captures the event before it reaches the child element
+  
+
+
+
+// document.getElementById('google').addEventListener('click', function(e) {
+        
+//     e.preventDefault(); //this is to prevent the default action of the event
+//     e.stopPropagation(); //this is to stop the bubbling of the event
+//     console.log("Google link clicked");
+
+//     }, false); //this is the bubbling of the event
+
+
+
+
+
+
+
+// small project to show the event bubbling and capturing
+
+document.querySelector('#images').addEventListener('click', function(e) {
+    console.log(e.target.tagName); // Logs the parent <li> of the clicked image
+    if (e.target.tagName === 'IMG') {
+        console.log("Image clicked: " + e.target.id);
+         let removeIt = e.target.parentNode;// Removes the entire <li> that contains the image
+    removeIt.remove()
+    }
+   ; 
+});
+
+// removeIt.parentNode.removeChild(removeIt) // second way to remove it
+    
+</script>
+</html>
