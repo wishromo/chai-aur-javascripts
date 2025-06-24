@@ -225,3 +225,7 @@ function newGame(){
  })
 }
 ```
+## project 6 solution
+```
+
+```
