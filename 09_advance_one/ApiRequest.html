@@ -1,24 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
 <body style="background-color: bisque;">
-    <!-- Value	State	Description
-0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete. -->
-    
+    Value   State   Description
+    0   UNSENT  Client has been created. open() not called yet.
+    1   OPENED  open() has been called.
+    2   HEADERS_RECEIVED    send() has been called, and headers and status are available.
+    3   LOADING Downloading; responseText holds partial data.
+    4   DONE    The operation is complete. -->
+    for readystate  
+
+    <!-- Card structure written directly in HTML -->
+    <div id="userCard" style="
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        width: 250px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    ">
+        <img id="userAvatar" src="" alt="User Avatar" style="
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        " />
+        <h2 id="userName" style="
+            font-size: 20px;
+            margin: 10px 0 5px 0;
+            text-align: center;
+        "></h2>
+        <p id="userFollowers" style="
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0;
+        "></p>
+    </div>
 </body>
 <script>
-    const requesturl="https://randomuser.me/api/"
-  const xhr= new  XMLHttpRequest()
-  xhr.open('GET',requesturl)
-  console.log(xhr.readyState)
-  xhr.send()
-    </script>
+    const requesturl = "https://api.github.com/users/hiteshchoudhary"; // request url
+
+    // 1 create a request object
+    const xhr = new XMLHttpRequest(); // make a new request object
+
+    xhr.open('GET', requesturl); // 2 make a request to the server
+
+    // 5 define a callback function to handle the response
+    // This function will be called whenever the readyState changes
+    xhr.onreadystatechange = function() {
+        console.log("HERE");
+        console.log(xhr.readyState); // 4 check the state of the request
+
+        if (xhr.readyState === 4) { // 6 check if the request is complete
+            const data = JSON.parse(this.responseText); // 7 get the response text, change it to json format and data type
+            console.log(typeof data); // 9 response comes in string format
+            console.log(data.followers);
+
+            // Fill in the card content
+            document.getElementById('userAvatar').src = data.avatar_url;
+            document.getElementById('userName').textContent = data.name || data.login; // fallback to username if name is null
+            document.getElementById('userFollowers').textContent = `Followers: ${data.followers}`;
+        }
+    };
+
+    xhr.send(); // 3 send the request
+</script>
 </html>
