@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body style="background-color: black;">
+    <button id="ornage">ornage</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // function init(){
+    //     let name="Mozilla"
+    //     function diplayname(){
+    //         console.log(name);
+            
+    //     }
+    //     diplayname()
+    // }
+    // init()
+    // function outer(){
+    //     let username="hina"
+    //     // console.log(secret);//cannot have acces of the child vairbale
+        
+    //     function inner(){
+    //         let secret="my123"
+    //         console.log("inner",username);
+            
+    //     }
+    //     function innertwo(){
+    //         console.log("innertwo",username);
+    //         // console.log(secret); //they cannot get the the acces of brother function
+            
+            
+    //     }
+    //     inner()
+    //     innertwo
+    // }
+    // outer()
+    // console.log("outer",username);
+
+
+
+    //closure
+    // function makefunc(){
+    //     const name="mozilla"
+    //     function diplayname(){
+    //         console.log(name);
+            
+    //     }
+    //     return diplayname
+    // }
+    // const myFunc=makefunc()
+    // myFunc()
+    
+</script>
+<script>
+// document.getElementById("ornage").onclick=function(){
+//     document.body.style.backgroundColor="orange"
+
+// }
+// document.getElementById("green").onclick=function(){
+//     document.body.style.backgroundColor="green"
+    
+// }
+function clickhandler(color) {
+ return function () {
+    document.body.style.backgroundColor=`${color}`
+    
+}
+}
+document.getElementById('ornage').onclick=clickhandler("orange")
+document.getElementById('green').onclick=clickhandler("green")
+</script>
+</html>
